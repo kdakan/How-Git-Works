@@ -7,7 +7,7 @@
   Apple Pie
 * Git internally stores contents of a folder as a tree object, content of a tree object is the compressed form of the list of hashes, names, read/write/execute permissions of the included files and (sub)trees (subtrees correspond to the subfolders)
 * Tree does not contain the name of the folder itself, it contains only the contents (blobs=files and trees=folders) inside this folder
-* Git internally stores blobs and trees in the objects folder (inside .git folder) in a persisted hashtable (dictionary), using the hash of the object as its key and the object as its value
+* Git's internal objects folder (inside .git folder) is organized as a persisted hashtable (dictionary), using the hash of the object as its key and the object as its value
 * Hash of a blob or a tree is calculated from SHA1 hash of the content of the object
 * Example tree content printed by: git cat-file -p 46624f2d142b3a74e3aac65f691cdfdbb42ce022 (contents of "cookbook" folder)
 

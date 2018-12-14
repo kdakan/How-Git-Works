@@ -1,14 +1,14 @@
 # How Git Works
 -----------------------------------------------------------------------------------------------------
 ## At its core, Git is a file system:
-* Git internally stores these objects in the objects folder (inside .git folder) in a persisted hashtable (dictionary), using the hash of the object as its key and the object as its value
-* Hash of a blob or a tree is calculated from SHA1 hash of the content of the object
 * Git internally stores a file as a blob object, content of a blob is the compressed form of the file content
 * Example blob content printed by: git cat-file -p 9eed377bbdeb4aa5d14f8df9cd50fed042f41023
 
   Apple Pie
 * Git internally stores contents of a folder as a tree object, content of a tree object is the compressed form of the list of hashes, names, read/write/execute permissions of the included files and (sub)trees (subtrees correspond to the subfolders)
 * Tree does not contain the name of the folder itself, it contains only the contents (blobs=files and trees=folders) inside this folder
+* Git internally stores blobs and trees in the objects folder (inside .git folder) in a persisted hashtable (dictionary), using the hash of the object as its key and the object as its value
+* Hash of a blob or a tree is calculated from SHA1 hash of the content of the object
 * Example tree content printed by: git cat-file -p 46624f2d142b3a74e3aac65f691cdfdbb42ce022 (contents of "cookbook" folder)
 
   100644 blob 9eed377bbdeb4aa5d14f8df9cd50fed042f41023    menu.txt
